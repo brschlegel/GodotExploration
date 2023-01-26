@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://detqc31hcjgg2"]
+
+[ext_resource type="Script" path="res://Level.gd" id="1_ppwhi"]
+[ext_resource type="PackedScene" uid="uid://dtej5fpwpnci5" path="res://Launcher.tscn" id="1_sqnqj"]
+[ext_resource type="PackedScene" uid="uid://beymorn5jqhh4" path="res://Goal.tscn" id="2_r4isp"]
+[ext_resource type="PackedScene" uid="uid://d4mfekgi2ar6e" path="res://PlacedCharge.tscn" id="4_s2y8j"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_ppwhi")
+
+[node name="Launcher" parent="." instance=ExtResource("1_sqnqj")]
+
+[node name="Goal" parent="." instance=ExtResource("2_r4isp")]
+position = Vector2(900, 300)
+scale = Vector2(5, 5)
+
+[node name="PlacedCharge" parent="." instance=ExtResource("4_s2y8j")]
+position = Vector2(436, 454)
+scale = Vector2(10, 10)
+
+[node name="Charge" parent="PlacedCharge" index="0"]
+charge = 5.0
+
+[node name="PlacedCharge2" parent="." instance=ExtResource("4_s2y8j")]
+position = Vector2(800, 454)
+scale = Vector2(10, 10)
+
+[connection signal="goal_scored" from="Goal" to="." method="goal_scored"]
+[connection signal="goal_scored" from="Goal" to="." method="_on_goal_scored"]
+
+[editable path="PlacedCharge"]
+[editable path="PlacedCharge2"]

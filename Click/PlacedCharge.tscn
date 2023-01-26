@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4mfekgi2ar6e"]
+
+[ext_resource type="Script" path="res://PlacedCharge.gd" id="1_x30pm"]
+[ext_resource type="Script" path="res://Charge.gd" id="2_ucvay"]
+
+[node name="PlacedCharge" type="Node2D"]
+script = ExtResource("1_x30pm")
+
+[node name="Charge" type="Node2D" parent="."]
+script = ExtResource("2_ucvay")
+charge = -5.0
+
+[node name="Shape" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-2.5, 2.5, -2.5, -2.5, 2.5, -2.5, 2.5, 2.5)

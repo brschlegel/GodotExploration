@@ -8,11 +8,50 @@
 
 config_version=5
 
+_global_script_classes=[{
+"base": "Node2D",
+"class": &"Charge",
+"language": &"GDScript",
+"path": "res://Charge.gd"
+}, {
+"base": "Line2D",
+"class": &"LauncherLine",
+"language": &"GDScript",
+"path": "res://LauncherLine.gd"
+}, {
+"base": "Node2D",
+"class": &"Level",
+"language": &"GDScript",
+"path": "res://Level.gd"
+}, {
+"base": "Node",
+"class": &"Magnetic_Registery",
+"language": &"GDScript",
+"path": "res://Magnetic_Registery.gd"
+}, {
+"base": "Node2D",
+"class": &"PlacedCharge",
+"language": &"GDScript",
+"path": "res://PlacedCharge.gd"
+}]
+_global_script_class_icons={
+"Charge": "",
+"LauncherLine": "",
+"Level": "",
+"Magnetic_Registery": "",
+"PlacedCharge": ""
+}
+
 [application]
 
 config/name="Click"
-config/features=PackedStringArray("4.0", "Vulkan Clustered")
+run/main_scene="res://Level.tscn"
+config/features=PackedStringArray("4.0")
 config/icon="res://icon.svg"
+
+[autoload]
+
+MagneticRegistery="*res://Magnetic_Registery.gd"
 
 [dotnet]
 

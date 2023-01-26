@@ -1,6 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://dtej5fpwpnci5"]
+[gd_scene load_steps=4 format=3 uid="uid://dtej5fpwpnci5"]
 
 [ext_resource type="Script" path="res://Launcher.gd" id="1_kby8d"]
+[ext_resource type="Texture2D" uid="uid://dvmu4ttlc76e5" path="res://pattern_0018.png" id="2_rm0jq"]
+[ext_resource type="Script" path="res://LauncherLine.gd" id="3_i3mwn"]
 
 [node name="Launcher" type="Node2D"]
+position = Vector2(500, 250)
 script = ExtResource("1_kby8d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_rm0jq")
+
+[node name="LauncherLine" type="Line2D" parent="."]
+width = 5.0
+script = ExtResource("3_i3mwn")
