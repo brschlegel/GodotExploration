@@ -16,3 +16,8 @@ func _process(delta):
 
 func _register_charge(c):
 	registry.append(c)
+
+func _get_color(charge_value : float) -> Color:
+	return Color.DODGER_BLUE if charge_value <= 0 else Color.FIREBRICK
+	
+	
