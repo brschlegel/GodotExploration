@@ -15,3 +15,5 @@ texture = ExtResource("2_rm0jq")
 [node name="LauncherLine" type="Line2D" parent="."]
 width = 5.0
 script = ExtResource("3_i3mwn")
+
+[node name="BallParent" type="Node2D" parent="."]

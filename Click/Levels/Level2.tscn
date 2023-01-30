@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://dqc6kxu40tf30"]
+
+[ext_resource type="Script" path="res://Level.gd" id="1_l4jy8"]
+[ext_resource type="PackedScene" uid="uid://dtej5fpwpnci5" path="res://Launcher.tscn" id="2_j3m7b"]
+[ext_resource type="PackedScene" uid="uid://beymorn5jqhh4" path="res://Goal.tscn" id="3_w3wxf"]
+[ext_resource type="PackedScene" uid="uid://b678utn57umk5" path="res://Wall.tscn" id="4_77ugq"]
+[ext_resource type="PackedScene" uid="uid://d4mfekgi2ar6e" path="res://PlacedCharge.tscn" id="5_glksq"]
+
+[node name="Level2" type="Node2D"]
+script = ExtResource("1_l4jy8")
+
+[node name="Launcher" parent="." instance=ExtResource("2_j3m7b")]
+
+[node name="Goal" parent="." instance=ExtResource("3_w3wxf")]
+position = Vector2(975, 254)
+scale = Vector2(5, 5)
+
+[node name="CollisionShape2D" parent="." instance=ExtResource("4_77ugq")]
+position = Vector2(786, 253)
+scale = Vector2(3, 10)
+
+[node name="PlacedCharge" parent="." instance=ExtResource("5_glksq")]
+position = Vector2(786, 64)
+scale = Vector2(5, 5)
+
+[node name="Charge" parent="PlacedCharge" index="0"]
+position = Vector2(0.199966, 0)
+charge = 5.0
+
+[editable path="PlacedCharge"]

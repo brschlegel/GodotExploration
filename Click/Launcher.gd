@@ -9,9 +9,12 @@ var isHeld = false;
 var timeHeld : float = 0
 var line : LauncherLine
 var mousePosition : Vector2
+
+var ball_parent : Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	line = get_node("LauncherLine")
+	ball_parent = get_node("BallParent")
 	pass # Replace with function body.
 
 
@@ -20,10 +23,14 @@ func _process(delta):
 	if(isHeld):
 		line._updateLine(mousePosition, mousePosition.length())
 	line.visible = isHeld
+	if Input.is_action_just_pressed("DebugKillAllBalls"):
+		for n in ball_parent.get_children():
+			n.queue_free()
 	pass
 	
 func _input(event):
-	mousePosition = event.position - global_position
+	if event is InputEventMouse:
+		mousePosition = event.position - global_position
 	if(event is InputEventMouseButton):
 		if(event.pressed):
 			isHeld = true
@@ -32,9 +39,6 @@ func _input(event):
 			var instance = ballScene.instantiate()
 			instance.scale = Vector2(.1,.1)
 			var force =  clampf(mousePosition.length()  * dist_to_force, min_force, max_force)
-			add_child(instance)
+			ball_parent.add_child(instance)
 			var dir: Vector2 = event.position - global_position
 			instance.apply_central_impulse(-dir.normalized() * force)
-			
-		
-		

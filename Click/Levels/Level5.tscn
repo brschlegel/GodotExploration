@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://ct8a5qvl6vyco"]
+
+[ext_resource type="Script" path="res://Level.gd" id="1_yyqyg"]
+[ext_resource type="PackedScene" uid="uid://beymorn5jqhh4" path="res://Goal.tscn" id="2_88860"]
+[ext_resource type="PackedScene" uid="uid://dtej5fpwpnci5" path="res://Launcher.tscn" id="3_rqmmu"]
+[ext_resource type="PackedScene" uid="uid://b678utn57umk5" path="res://Wall.tscn" id="4_0ypjd"]
+[ext_resource type="PackedScene" uid="uid://d4mfekgi2ar6e" path="res://PlacedCharge.tscn" id="5_ql3gq"]
+
+[node name="Level3" type="Node2D"]
+script = ExtResource("1_yyqyg")
+
+[node name="Goal" parent="." instance=ExtResource("2_88860")]
+position = Vector2(905, 69)
+
+[node name="Launcher" parent="." instance=ExtResource("3_rqmmu")]
+position = Vector2(244, 391)
+
+[node name="CollisionShape2D2" parent="." instance=ExtResource("4_0ypjd")]
+position = Vector2(975, 218)
+scale = Vector2(2.5, 50)
+
+[node name="CollisionShape2D3" parent="." instance=ExtResource("4_0ypjd")]
+position = Vector2(673, -151)
+scale = Vector2(2.5, 50)
+
+[node name="CollisionShape2D4" parent="." instance=ExtResource("4_0ypjd")]
+position = Vector2(196, 578)
+rotation = -1.5708
+scale = Vector2(10, 50)
+
+[node name="CollisionShape2D5" parent="." instance=ExtResource("4_0ypjd")]
+position = Vector2(500, 700)
+rotation = -1.5708
+scale = Vector2(2.5, 50)
+
+[node name="PlacedCharge" parent="." instance=ExtResource("5_ql3gq")]
+position = Vector2(854, 634)
+scale = Vector2(10, 10)
+
+[node name="Charge" parent="PlacedCharge" index="0"]
+position = Vector2(-7.62939e-06, 0.299988)
+charge = -15.0
+
+[editable path="PlacedCharge"]

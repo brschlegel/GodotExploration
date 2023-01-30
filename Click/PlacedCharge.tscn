@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://d4mfekgi2ar6e"]
+[gd_scene load_steps=4 format=3 uid="uid://d4mfekgi2ar6e"]
 
 [ext_resource type="Script" path="res://PlacedCharge.gd" id="1_x30pm"]
 [ext_resource type="Script" path="res://Charge.gd" id="2_ucvay"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3p5ia"]
 
 [node name="PlacedCharge" type="Node2D"]
 script = ExtResource("1_x30pm")
@@ -12,3 +14,11 @@ charge = -5.0
 
 [node name="Shape" type="Polygon2D" parent="."]
 polygon = PackedVector2Array(-2.5, 2.5, -2.5, -2.5, 2.5, -2.5, 2.5, 2.5)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(1, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1, 0)
+scale = Vector2(0.25, 0.25)
+shape = SubResource("RectangleShape2D_3p5ia")
