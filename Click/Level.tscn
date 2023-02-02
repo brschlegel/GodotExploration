@@ -25,8 +25,8 @@ charge = 5.0
 position = Vector2(800, 454)
 scale = Vector2(10, 10)
 
-[connection signal="goal_scored" from="Goal" to="." method="goal_scored"]
 [connection signal="goal_scored" from="Goal" to="." method="_on_goal_scored"]
+[connection signal="goal_scored" from="Goal" to="." method="goal_scored"]
 
 [editable path="PlacedCharge"]
 [editable path="PlacedCharge2"]

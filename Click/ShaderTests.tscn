@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://da8c28ckk15gy"]
+
+[ext_resource type="Shader" path="res://Magnetic.gdshader" id="1_7hxfb"]
+[ext_resource type="Texture2D" uid="uid://d2tdp370dn7de" path="res://1x1.png" id="2_cs2jj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_egkm7"]
+shader = ExtResource("1_7hxfb")
+shader_parameter/intensity = null
+
+[node name="Polygon2D" type="Polygon2D"]
+material = SubResource("ShaderMaterial_egkm7")
+texture = ExtResource("2_cs2jj")
+polygon = PackedVector2Array(0, 7, 104, 1, 100, 109, -3, 107)
+uv = PackedVector2Array(0, 7, 104, 1, 100, 109, -3, 107)
